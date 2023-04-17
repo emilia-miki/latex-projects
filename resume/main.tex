@@ -1,0 +1,154 @@
+% Preamble
+% Compile with XeLateX
+
+\documentclass[12 pt,oneside,a4paper,titlepage]{article}
+\usepackage{preamble}
+\graphicspath{{pic/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% \sidebar{sideBarColor!25}
+% \simpleheader{titleBackColor}{Emilia}{Miki}{Software Developer}{white}
+% \mainsection{accent}
+\sidebar{primary}
+\simpleheader{secondary}{Emilia}{Miki}{Software Developer}
+% \mainsection{mainColor}
+
+% Start Minipages
+\vspace*{3.49cm}% start 8 cm from the top of the page}
+    \adjustbox{valign=t}{
+    \begin{minipage}{7.3cm} % large 7.4 cm from the top
+    \vspace*{1.2cm} % text starts 1cm under the top of the minipage
+
+        % Picture
+        \begin{center}
+        \begin{tikzpicture}
+            \node[
+            circle,
+            minimum size=\cvPictureWidth,
+            path picture={
+            \node at (path picture bounding box.center){
+             \includegraphics[width=\cvPictureWidth]{photo.jpg}
+             };
+             }]
+            {};
+        \end{tikzpicture}
+        \end{center}
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Profile section
+        {\color{accent}\ruleline{\color{accent}\textbf{About me}}}
+        A diligent computer science student, who loves every part of CS without exception. Eternally curious and learning new things tirelessly in my free time. Most passionate about software development, math and data science. Long-time Unix enthusiast.
+
+        \bigskip
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Details Section
+        {\color{accent}\ruleline{\color{accent} \textbf{Details}}}
+
+        \smallskip
+
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\faIdCard};
+         & \node{Legal name: Mykyta Diachyna};\\
+        \node{\faMapMarker};
+        & \node{Planning to relocate to Kyiv, Ukraine};\\
+        \node{\faEnvelope};
+         & \node{\href{mailto:emiliamiki@icloud.com}{emiliamiki@icloud.com}};\\
+        \node{\faPhone};
+         & \node{\href{tel:380681307096}{+380 68 130 7096}};\\
+         \node{\faTelegram};
+         & \node{\href{https://t.me/emilia_miki}{@emilia\_miki}};\\
+         \node{\faGithub};
+         & \node{\href{https://github.com/emilia-miki?tab-repositories}{emilia-miki}};\\
+         };
+        \end{tikzpicture}
+
+        \bigskip
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Skill and Strengths
+        {\color{accent} \ruleline{\color{accent} \textbf{Soft Skills and Strengths}}}
+        \vspace*{-0.5cm}
+        \begin{center}
+            \cvtag{Curiosity}
+            \cvtag{Problem Solving}
+            \cvtag{Fast Learning}
+            \cvtag{Autonomy}
+            \cvtag{Adaptability}
+            \cvtag{Team Working}
+            \cvtag{Good Communication}
+        \end{center}
+
+        \medskip
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Professional Skills
+        {\color{accent} \ruleline{\color{accent} \textbf{Professional Skills}}}
+        \begin{center}
+            \cvtag{HTML}
+            \cvtag{CSS}
+            \cvtag{JavaScript}
+            \cvtag{React}
+            \cvtag{Next.js}
+            \cvtag{Python}
+            \cvtag{Django}
+            \cvtag{SQL}
+            \cvtag{Git}
+            \cvtag{Docker}
+        \end{center}
+
+        \medskip
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        {\color{accent} \ruleline{\color{accent} \textbf{Languages}}}
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\flag{england.png}};
+        & \node{English - Advanced};\\
+        \node{\flag{ukraine.png}};
+        & \node{Ukrainian - Native};\\
+        };
+        \end{tikzpicture}
+
+    \end{minipage}} %
+    \hfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MAIN SECTION %%%%%%%%%%%%%%%%%%%%
+    \adjustbox{valign=t}{
+        \begin{minipage}{11.3cm}
+            \vspace*{1cm}
+            \section*{\colorbox{accent}{\color{white}EDUCATION}}
+
+            \EducationSection{2020 - Ongoing}{Bachelor's Degree in Computer Science}{National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"}{Institute of Applied System Analysis}
+
+            \vspace*{0.5cm}
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            % Work Experience
+            \section*{\colorbox{accent}{\color{white}EXPERIENCE}}
+
+            \ExperienceSection{https://github.com/emilia-miki/chat-app}{Web Messenger}{This is a web application for online chatting, written with ASP.NET and Blazor. Supports group and private chats, deleting, editing messages, replying to messages, replying privately, autoscroll. Includes a Terraform configuration for automatic deployment to Azure.
+            }
+
+            \vspace*{0.4cm}
+
+            \ExperienceSection{https://github.com/emilia-miki/code/tree/main/uni/set-cw}{Django backend for a marketing company}{This is a Django backend for managing data in a few different types of databases (CouchDB, Redis, Neo4j and SQLite). The APIs for interacting with the databases were heavily edited by me. This was a group project and it was cooperatively designed and planned by us before implementing it.
+            }
+
+            \vspace*{0.4cm}
+
+            \ExperienceSection{https://github.com/emilia-miki/web-store}{Web store for clothes}{This is a Single-Page Web Application for an imaginary clothes store. The backend is written in Python and uses the Django framework and Django REST framework. The frontend is set up with Vite, written in JavaScript with React and uses Mantine for styles. Authorization is set up statelessly, using JWT tokens and djangorestframework-simplejwt. The database used is PostgreSQL, testing was done with it running in Docker. The data for testing was parsed from an existing web store using a script inside the populate-database folder and BeautifulSoup.}
+        \end{minipage}
+    }
+
+\end{document}
