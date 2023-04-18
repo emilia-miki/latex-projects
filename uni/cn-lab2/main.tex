@@ -1,0 +1,143 @@
+\documentclass[12 pt, a4paper]{article}
+
+\usepackage{preamble}
+
+\begin{document}
+
+\large
+\onehalfspacing
+
+\thispagestyle{empty}
+
+\begin{center}
+
+    \bfseries
+
+    НАЦІОНАЛЬНИЙ ТЕХНІЧНИЙ УНІВЕРСИТЕТ УКРАЇНИ
+
+    "КИЇВСЬКИЙ ПОЛІТЕХНІЧНИЙ ІНСТИТУТ
+
+    імені  ІГОРЯ  СІКОРСЬКОГО"
+
+    Інститут  прикладного системного аналізу
+
+    Кафедра системного проектування
+
+    \mdseries
+
+    \vfill
+
+    Звіт
+
+    про виконання лабораторної роботи №2
+
+    з дисципліни "Комп‘ютерні мережі"
+
+    \vfill
+
+    \begin{flushleft}
+
+        Виконав:
+
+        студент III курсу, групи ДА-01
+
+        Дячина Микита
+
+    \end{flushleft}
+
+    \vfill
+
+    Київ - 2023
+
+\end{center}
+
+\newpage
+
+\section*{Мета роботи}
+
+\begin{itemize}
+    \item ознайомлення із засобами перехоплення, збереження і аналізу мережевого трафіку за допомогою відомих аналізаторів мережевого трафіку як Wireshark;
+
+    \item проведення аналізу мережевого сеансу транспортного протоколу TCP.
+\end{itemize}
+
+{\bfseries Варіант 8.}
+
+\section*{Хід роботи}
+
+Спочатку використаємо ipconfig для отримання інформації про інтерфейс en0
+(wi-fi, що використовується для доступу до інтернету):
+
+\begin{minted}{text}
+~>ipconfig getiflist
+en3 en4 bridge0 en0
+~>ipconfig getsummary en0
+<dictionary> {
+  BSSID : ac:84:c6:84:0e:10
+  IPv4 : <array> {
+    0 : <dictionary> {
+      Addresses : <array> {
+        0 : 192.168.1.101
+      }
+      ChildServiceID : LINKLOCAL-en0
+      ConfigMethod : DHCP
+      DHCP : <dictionary> {
+        LeaseIsInfinite : TRUE
+        LeaseStartTime : 04/18/2023 12:18:46
+        Packet : op = BOOTREPLY
+htype = 1
+flags = 0
+hlen = 6
+hops = 0
+xid = 0x706b3e93
+secs = 0
+ciaddr = 0.0.0.0
+
+      IsPublished : TRUE
+      Router : 192.168.1.1
+      RouterARPVerified : TRUE
+      ServiceID : EA7DD607-2890-4A6C-A307-EBBC2FD17889
+      SubnetMasks : <array> {
+        0 : 255.255.255.0
+      }
+    }
+    1 : <dictionary> {
+      ConfigMethod : LinkLocal
+      IsPublished : TRUE
+      ParentServiceID : EA7DD607-2890-4A6C-A307-EBBC2FD17889
+      ServiceID : LINKLOCAL-en0
+    }
+  }
+  IPv6 : <array> {
+    0 : <dictionary> {
+      ConfigMethod : Automatic
+      DHCPv6 : <dictionary> {
+        Mode : None
+        State : Inactive
+      }
+      IsPublished : FALSE
+      LastFailureStatus : network changed
+      RTADV : <dictionary> {
+        State : Solicit
+      }
+      ServiceID : EA7DD607-2890-4A6C-A307-EBBC2FD17889
+    }
+  }
+  InterfaceType : WiFi
+  LinkStatusActive : TRUE
+  NetworkID : 6E18AB8F-4B58-4428-9CBF-35B4AB5DB612
+  SSID : TP-Link_0E10
+  Security : WPA2_PSK
+}
+\end{minted}
+
+Звідси видно, що IP-адреса комп‘ютера в локальній мережі –  192.168.1.101, і MAC-адреса мережевого адаптера – 1c:91:80:c9:fb:2f.
+
+Тепер проведемо коротке захоплення пакетів і переглянемо отриману статистику:
+
+
+
+\section*{Висновок}
+
+\end{document}
+

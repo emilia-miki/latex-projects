@@ -1,0 +1,62 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZti{}\PYGZgt{}ipconfig getiflist
+en3 en4 bridge0 en0
+\PYGZti{}\PYGZgt{}ipconfig getsummary en0
+\PYGZlt{}dictionary\PYGZgt{} \PYGZob{}
+  BSSID : ac:84:c6:84:0e:10
+  IPv4 : \PYGZlt{}array\PYGZgt{} \PYGZob{}
+    0 : \PYGZlt{}dictionary\PYGZgt{} \PYGZob{}
+      Addresses : \PYGZlt{}array\PYGZgt{} \PYGZob{}
+        0 : 192.168.1.101
+      \PYGZcb{}
+      ChildServiceID : LINKLOCAL\PYGZhy{}en0
+      ConfigMethod : DHCP
+      DHCP : \PYGZlt{}dictionary\PYGZgt{} \PYGZob{}
+        LeaseIsInfinite : TRUE
+        LeaseStartTime : 04/18/2023 12:18:46
+        Packet : op = BOOTREPLY
+htype = 1
+flags = 0
+hlen = 6
+hops = 0
+xid = 0x706b3e93
+secs = 0
+ciaddr = 0.0.0.0
+
+      IsPublished : TRUE
+      Router : 192.168.1.1
+      RouterARPVerified : TRUE
+      ServiceID : EA7DD607\PYGZhy{}2890\PYGZhy{}4A6C\PYGZhy{}A307\PYGZhy{}EBBC2FD17889
+      SubnetMasks : \PYGZlt{}array\PYGZgt{} \PYGZob{}
+        0 : 255.255.255.0
+      \PYGZcb{}
+    \PYGZcb{}
+    1 : \PYGZlt{}dictionary\PYGZgt{} \PYGZob{}
+      ConfigMethod : LinkLocal
+      IsPublished : TRUE
+      ParentServiceID : EA7DD607\PYGZhy{}2890\PYGZhy{}4A6C\PYGZhy{}A307\PYGZhy{}EBBC2FD17889
+      ServiceID : LINKLOCAL\PYGZhy{}en0
+    \PYGZcb{}
+  \PYGZcb{}
+  IPv6 : \PYGZlt{}array\PYGZgt{} \PYGZob{}
+    0 : \PYGZlt{}dictionary\PYGZgt{} \PYGZob{}
+      ConfigMethod : Automatic
+      DHCPv6 : \PYGZlt{}dictionary\PYGZgt{} \PYGZob{}
+        Mode : None
+        State : Inactive
+      \PYGZcb{}
+      IsPublished : FALSE
+      LastFailureStatus : network changed
+      RTADV : \PYGZlt{}dictionary\PYGZgt{} \PYGZob{}
+        State : Solicit
+      \PYGZcb{}
+      ServiceID : EA7DD607\PYGZhy{}2890\PYGZhy{}4A6C\PYGZhy{}A307\PYGZhy{}EBBC2FD17889
+    \PYGZcb{}
+  \PYGZcb{}
+  InterfaceType : WiFi
+  LinkStatusActive : TRUE
+  NetworkID : 6E18AB8F\PYGZhy{}4B58\PYGZhy{}4428\PYGZhy{}9CBF\PYGZhy{}35B4AB5DB612
+  SSID : TP\PYGZhy{}Link\PYGZus{}0E10
+  Security : WPA2\PYGZus{}PSK
+\PYGZcb{}
+\end{Verbatim}
